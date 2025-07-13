@@ -1,5 +1,5 @@
 CC=g++
-CFLAGS=-lm -lSDL2 -lSDL2_ttf
+CFLAGS=-Wall -Wextra -lm -lSDL2 -lSDL2_ttf
 SRC_DIR=src
 OBJ_DIR=obj
 SRCS=$(shell find $(SRC_DIR) -name '*.cpp')
