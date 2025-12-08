@@ -14,13 +14,16 @@
 #include <SDL2/SDL_ttf.h>
 
 
-#include "Mango.hpp"
-#include "render/Window.hpp"
 
 using namespace std;
 
 int main(int ac,char *av[])
 {
+	(void)ac;
+	(void)av;
+
+	// TODO: Add cmd args file opening
+	
 	if(SDL_Init(SDL_INIT_EVERYTHING) != 0)
 	{
 		cout << SDL_GetError() << endl;
@@ -34,11 +37,6 @@ int main(int ac,char *av[])
 	}
 
 
-	mango::Window* win = mango::Window::get();
-
-	mango::Header *header = mango::Header::get(win->renderer);
-	mango::TabNav *tabnav = mango::TabNav::get(win->renderer);
-	mango::Editor *editor = mango::Editor::get(win->renderer);
 
 	SDL_Event e;
 	bool running = true;
@@ -52,17 +50,7 @@ int main(int ac,char *av[])
 				running = false;
 			}
 
-			header->process_events(&e);
-			tabnav->process_events(&e);
-			editor->process_events(&e);
 		}
-		win->clear();
-
-		tabnav->render(win->renderer);
-		editor->render(win->renderer);
-		header->render(win->renderer);
-
-		win->render();
 		SDL_Delay(17);
 	}
 

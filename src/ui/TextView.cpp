@@ -3,6 +3,7 @@
 #include <SDL2/SDL_render.h>
 #include <SDL2/SDL_surface.h>
 #include <SDL2/SDL_ttf.h>
+#include <cstdint>
 #include <cstring>
 #include <iostream>
 
@@ -40,10 +41,21 @@ TextView::TextView(const char *text,const char *font_path,SDL_Renderer *ren,SDL_
 	this->text_tx = LoadText(text,font,ren,fgColor);
 }
 
+void TextView::set_x(uint32_t x)
+{
+	this->textRect.x = x;
+	((View*)this)->set_x(x);
+}
+
 void TextView::set_y(uint32_t y)
 {
-	this->rect.y = y;
 	this->textRect.y = y;
+	((View*)this)->set_y(y);
+}
+
+SDL_Rect TextView::get_text_rect()
+{
+	return textRect;
 }
 
 SDL_Texture* TextView::LoadText(const char *text,TTF_Font *font,SDL_Renderer* ren,SDL_Color color)
