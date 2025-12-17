@@ -1,4 +1,15 @@
+#pragma once
 
+#include "../ui/View.hpp"
+#include "../ui/Button.hpp"
+#include <vector>
+#include <string>
+
+
+namespace mango
+{
+	using std::string;
+	using std::vector;
 
 	class Tab: public View
 	{
@@ -33,3 +44,5 @@
 			friend void* close_file_fn(void*);
 			friend void* select_tab(void*);
 	};
+
+} // mango

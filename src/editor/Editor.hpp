@@ -1,6 +1,4 @@
-#ifndef __MANGO_EDITOR_HPP__
-#define __MANGO_EDITOR_HPP__
-
+#pragma once
 
 #include <cstdio>
 #include <iostream>
@@ -72,4 +70,3 @@ namespace mango
 
 } // namespace mango
 
-#endif

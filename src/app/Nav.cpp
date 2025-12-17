@@ -1,5 +1,12 @@
 
+#include "Nav.hpp"
+#include <iostream>
 
+namespace mango
+{
+using std::cout;
+using std::cerr;
+using std::endl;
 // Tab starts here
 
 
@@ -104,3 +111,4 @@ TabNav* TabNav::get(SDL_Renderer *ren)
 }
 
 // TabNav ends here
+} //mango

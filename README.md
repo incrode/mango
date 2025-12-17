@@ -1,8 +1,11 @@
 # mango
 
-A text editor only in C++ and SDL2.
+An Editor in C++ and SDL2.
+
+`Current Version: v0.02`
 
 ### TODO
+
 
 ~ The editor module
 

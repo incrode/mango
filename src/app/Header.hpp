@@ -1,32 +1,39 @@
+#include "../ui/Button.hpp"
+#include "../ui/TextInput.hpp"
 
-	class PopInput: public View
-	{
-		private:
-			TextInput inp;
-			Button ok;
-		public:
+namespace mango
+{
 
-			PopInput(SDL_Renderer *ren,SDL_Color bgColor);
-			void process_events(SDL_Event *e);
-			void render(SDL_Renderer *ren);
-	};
+class PopInput: public View
+{
+	private:
+		TextInput inp;
+		Button ok;
+	public:
 
-	class Header: public View
-	{
-		private:
-			static Header *header;
+		PopInput(SDL_Renderer *ren,SDL_Color bgColor);
+		void process_events(SDL_Event *e);
+		void render(SDL_Renderer *ren);
+};
 
-			Button newFile;
-			Button saveFile;
-			Button openFile;
-			Button closeFile;
+class Header: public View
+{
+	private:
+		static Header *header;
 
-			PopInput popInput;
+		Button newFile;
+		Button saveFile;
+		Button openFile;
+		Button closeFile;
 
-			Header(SDL_Renderer *ren);
-		public:
-			bool popInput_active = false;
-			static Header* get(SDL_Renderer *ren);
-			void process_events(SDL_Event *e);
-			void render(SDL_Renderer *ren);
-	};
+		PopInput popInput;
+
+		Header(SDL_Renderer *ren);
+	public:
+		bool popInput_active = false;
+		static Header* get(SDL_Renderer *ren);
+		void process_events(SDL_Event *e);
+		void render(SDL_Renderer *ren);
+};
+
+} // mango

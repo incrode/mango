@@ -1,4 +1,9 @@
 
+#include "Util.hpp"
+#include "Header.hpp"
+
+namespace mango
+{
 // PopInput starts here
 
 SDL_Rect popup_rect = {
@@ -114,3 +119,4 @@ Header* Header::get(SDL_Renderer *ren)
 	return header;
 }
 // Header ends here
+} // mango

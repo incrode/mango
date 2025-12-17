@@ -14,7 +14,6 @@
 #include <SDL2/SDL_ttf.h>
 
 
-
 using namespace std;
 
 int main(int ac,char *av[])
